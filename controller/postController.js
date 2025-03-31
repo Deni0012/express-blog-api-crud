@@ -26,10 +26,10 @@ function index(req, res){
 //show
 function show(req, res){
    const id = parseInt(req.params.id);
-   const post = posts.find(post => post.id === id);
+   const posts = posts.find(posts => posts.id === id);
 
-   if(post){
-    res.json(post);
+   if(posts){
+    res.json(posts);
    } else {
     res.status(404).json({
         messaggio: "Error page not found"
@@ -55,7 +55,18 @@ function patch(req, res){
 
 //destroy
 function destroy(req, res){
-    res.send("destroy function");
+    const id = parseInt(req.params.id);
+    
+    console.log(id);
+
+    const postsIndex = posts.findIndex(posts => posts.id === id);
+
+    if (postsIndex < 0){
+
+        res.status(404).json({
+            messaggio: "Error page not found"
+        });
+    }
 
 }
 
