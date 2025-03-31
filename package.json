@@ -4,10 +4,11 @@
   "description": "- Creiamo un controller per i nostri post, in una cartella controllers.\r - All’interno, prepariamo tutte le funzioni necessarie \r - Importiamo le funzioni dichiarate nel controller e le associamo alle varie rotte.\r - Testiamo su postman",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "watch": "node --watch app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Denise Di Genni",
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.2"
