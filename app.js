@@ -7,7 +7,11 @@ const port = 5500;
 
 app.use(express.static('public'));
 
-app.use("/posts", postRouter);
+app.use(express.static ('./posts.js' + posts));
+
+app.use(express.static('./postController.js' + controller));
+
+app.use("./post.js", postRouter);
 
 app.listen(port, function(){
     console.log("Server attivo");
