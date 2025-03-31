@@ -1,0 +1,15 @@
+{
+  "name": "express-blog-api-crud",
+  "version": "1.0.0",
+  "description": "- Creiamo un controller per i nostri post, in una cartella controllers.\r - All’interno, prepariamo tutte le funzioni necessarie \r - Importiamo le funzioni dichiarate nel controller e le associamo alle varie rotte.\r - Testiamo su postman",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
