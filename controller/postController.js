@@ -84,7 +84,27 @@ function update(req, res){
 
 //patch
 function patch(req, res){
-    res.send("patch function")
+    const id = parseInt(req.params.id);
+    const post = posts.find(post => post.id === id);
+
+    if(post) {
+        if (req.body.title && req.body.title != post.title) {
+            post.title = req.body.title;
+        }
+        if (req.body.content && req.body.content != post.content) {
+            post.content = req.body.content;
+        }
+        if (req.body.image && req.body.image != post.image) {
+            post.image = req.body.image;
+        }
+        if (req.body.tags && JSON.stringify(req.body.tags) !== JSON.stringify(post.tags)) {
+            post.tags = Array.isArray(req.body.tags) ? req.body.tags : [req.body.tags];
+        }
+        res.status(200).json(post);
+    }else {
+        res.status(404).json({ message: "Page not found" });
+    }
+      
 }
 
 //destroy
