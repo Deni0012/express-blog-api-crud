@@ -39,7 +39,23 @@ function show(req, res){
 
 //store
 function store(req, res){
-    res.send("store function");
+    const nuovoId = posts.length > 0 ? (posts[posts.length - 1].id + 1) : 1;
+    const nuovoPost = {
+        id: nuovoId,
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags
+    };
+
+    posts.push(nuovoPost);
+
+    console.log(posts);
+
+    res.status(201);
+    res.json(nuovoPost);
+
+
 }
 
 //update
