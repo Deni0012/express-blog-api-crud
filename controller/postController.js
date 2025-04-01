@@ -77,7 +77,7 @@ function update(req, res){
     }else {
         res.status(404).json({
             message: "Page not found"
-        })
+        });
     }
 
 }
@@ -102,7 +102,9 @@ function patch(req, res){
         }
         res.status(200).json(post);
     }else {
-        res.status(404).json({ message: "Page not found" });
+        res.status(404).json({
+             message: "Page not found" 
+            });
     }
       
 }
