@@ -7,6 +7,8 @@ const port = 5500;
 
 app.use(express.static('/public'));
 
+app.use(express.json());
+
 app.use(express.static ('/posts.js' + posts));
 
 app.use(express.static('/postController.js' + controller));
