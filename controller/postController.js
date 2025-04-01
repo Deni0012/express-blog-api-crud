@@ -60,7 +60,25 @@ function store(req, res){
 
 //update
 function update(req, res){
-    res.send("update function");
+    const id = parseInt(req.params.id);
+    const post = posts.find(post => post.id === id);
+
+    if(post){
+        if(!req.body.title || req.body.content || req.body.image || req.body.tags) {
+            res.status(404).json({message: "Not valid"});
+        }else {
+            post.title = req.body.title;
+            post.content = req.body.content;
+            post.image = req.body.image;
+            post.tags = Array.isArray(req.body.tags) ? req.body.tags : [req.body.tags];
+
+            res.status(200).json(post);
+        }
+    }else {
+        res.status(404).json({
+            message: "Page not found"
+        })
+    }
 
 }
 
